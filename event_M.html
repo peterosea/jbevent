@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>아태마스터스 대회 개최 기념 이벤트</title>
+
+    <!-- 제이쿼리 및 부트스트랩 로드 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- 전북도청사이트 기존 JS/CSS -->
+    <link rel="stylesheet" type="text/css" href="http://www.eventjb.co.kr/M/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://www.eventjb.co.kr/M/event/201910/css/event.css">
+    <script type="text/javascript" src="http://www.eventjb.co.kr/M/event/201910/js/common.js"></script>
+    <script type="text/javascript" src="http://www.eventjb.co.kr/M/js/common.js"></script>
+
+    <!-- 피터오세아 작업 CSS -->
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="logo"><a href="/M"><img src="http://www.eventjb.co.kr/M/images/logo.jpg" alt=""></a></div>
+            <div class="gnb">
+                <ul>
+                    <li class="gnb-item active"><a href="http://www.eventjb.co.kr/M">진행중인 이벤트</a></li>
+    <!-- 						<li class="gnb-item "><a href="javascript:openChk(1);">지난 이벤트</a></li> -->
+                    <li class="gnb-item "><a href="http://www.eventjb.co.kr/M/event_before.asp">지난 이벤트</a></li>
+    <!-- 						<li class="gnb-item "><a href="javascript:openChk(2);">당첨자 확인</a></li> -->
+                    <li class="gnb-item "><a href="http://www.eventjb.co.kr/M/event_winner.asp">당첨자 확인</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="container">
+            <div id="content" class="event_wrapper event_wrap">
+                <div class="content_inner">
+                    <!-- 이벤트 타이틀 -->
+                    <section class="title_wrap">
+                        <div class="inner">
+                            <div class="_title"></div>
+                        </div>
+                    </section>
+                    <!-- 영상 및 소개 영역 -->
+                    <section class="intro_wrap">
+                        <div class="inner">
+                            <div class="container_movie">
+                                <div class="_play"></div>
+                                <video width="100%" height="100%" controls>
+                                    <source src="movie.mp4" type="video/mp4">
+                                    <source src="movie.ogg" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- 퀴즈이벤트 영역 -->
+                    <section class="quiz_wrap">
+                        <!-- 보기 리스트 -->
+                        <div style="display: none;" id="example_wrap" class="inner example_wrap" >
+                            <div class="_title"></div>
+                            <ul class="example_list">
+                                <li class="item selected"></li>
+                                <li class="item"></li>
+                                <li class="item"></li>
+                                <li class="item"></li>
+                            </ul>
+                            <div class="submit_wrap">
+                                <button class="btn btn_submit" data-toggle="modal" data-target="#wrong_answer">정답 제출하기</button>
+                            </div>
+                        </div>
+                        <!-- 정답 입력하기 폼 -->
+                        <div id="form_wrap" class="inner form_wrap">
+                            <form id="submit_form">
+                                <div class="_title"></div>
+                                <ul class="_content">
+                                    <li class="_name">
+                                        <label></label>
+                                        <input type="text" />
+                                    </li>
+                                    <li class="_phone">
+                                        <label></label>
+                                        <input type="text" maxlength="3"/> - <input type="text" maxlength="4"/> - <input type="text" maxlength="4"/>
+                                    </li>
+                                    <li class="_sns">
+                                        <label></label>
+                                        <div class="sns facebook"></div>
+                                        <div class="sns blog"></div>
+                                        <div class="sns twitter"></div>
+                                    </li>
+                                    <li class="_url">
+                                        <label></label>
+                                        <input type="text" />
+                                    </li>
+                                    <li class="_privacy">
+                                        <label></label>
+                                        <div class="_grp">
+                                            <div class="_row radios">
+                                                <input type="radio" name="agree" /> <span>동의함</span> <input type="radio" name="agree" /> <span>동의하지 않음</span> <div class="btn view_agreement" data-toggle="modal" data-target="#pop_agreement">전문보기</div>
+                                            </div>
+                                            <div class="_row">
+                                                · 개인정보 취급방침에 동의하지 않을 경우 이벤트 참여가 불가능합니다.
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="submit_wrap">
+                                    <div class="btn btn_submit" data-toggle="modal" data-target="#submit_event">퀴즈 이벤트 참여하기</div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    <!-- 이벤트 경품 -->
+                    <section class="etc_wrap">
+                    </section>
+                </div>
+            </div>
+            <!-- Modal : 오답일때 -->
+            <div class="modal fade wrong_answer" id="wrong_answer" tabindex="-1" role="dialog" aria-labelledby="wrongAnswer" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal : 정답일때 -->
+            <div class="modal fade correct_answer" id="correct_answer" tabindex="-1" role="dialog" aria-labelledby="correctAnswer" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal : 개인정보취급방침 -->
+            <div class="modal fade pop_agreement" id="pop_agreement" tabindex="-1" role="dialog" aria-labelledby="popAgreement" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal : 이벤트 참여완료 -->
+            <div class="modal fade submit_event" id="submit_event" tabindex="-1" role="dialog" aria-labelledby="submitEvent" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

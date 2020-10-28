@@ -41,7 +41,7 @@ html, body {
 a {
     text-decoration: none;
 }
-div {
+.event_wrap div {
     display:flex;
 }
 ul {
@@ -65,13 +65,18 @@ input {
 }
 
 // Page
+body .container {
+    min-width: unset;
+    max-width: unset;
+    padding:0;
+}
 .event_wrapper {
-    max-width: 1920px;
     min-width: 950px;
     width: 100%;
     display: flex;
     margin:0 auto;
-    .container {
+    position: relative;
+    .content_inner {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -87,16 +92,18 @@ input {
         align-items: center;
         background-position: center top;
         background-size: auto;
+        background-repeat:repeat-x;
         .inner {
             max-width: 960px;
             width: 100%;
+            margin-left: auto;
+            margin-right: auto;
         }
         // 이벤트 제목 영역
         &.title_wrap {
             padding:35px 0 60px;
             justify-content: center;
             background-image: url('#{$urlImg}/pc_bg01.jpg');
-            background-attachment: fixed;
             @include respond-to('mo') {
                 padding:35px 0 77px;
             }
