@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap");
 html, body {
   margin: 0;
 }
@@ -44,6 +45,10 @@ input.focus {
   outline: none !important;
 }
 
+body, div, a, li, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gothic A1', sans-serif !important;
+}
+
 body .container {
   min-width: unset;
   max-width: unset;
@@ -58,6 +63,7 @@ body .container {
   display: flex;
   margin: 0 auto;
   position: relative;
+  max-width: 1920px;
 }
 
 .event_wrapper .content_inner {
@@ -92,7 +98,7 @@ body .container {
           align-items: center;
   background-position: center top;
   background-size: auto;
-  background-repeat: repeat-x;
+  background-repeat: no-repeat;
 }
 
 .event_wrapper section .inner {
@@ -344,6 +350,7 @@ body .container {
   color: #000;
   font-style: italic;
   font-size: 28px;
+  font-weight: bold;
   border: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -407,6 +414,16 @@ body .container {
   background-position: center center;
   background-size: auto;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 950px) {
+  .event_wrapper section.quiz_wrap .form_wrap ._title {
+    width: 609px;
+    height: 227px;
+    background-image: url("../img/title_answer_mo.png");
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
 }
 
 .event_wrapper section.quiz_wrap .form_wrap ul._content {
@@ -599,6 +616,7 @@ body .container {
           align-items: center;
   color: #ffa800;
   font-size: 16px;
+  text-align: left;
 }
 
 @media (max-width: 950px) {
@@ -686,6 +704,7 @@ body .container {
   color: #000;
   font-style: italic;
   font-size: 28px;
+  font-weight: bold;
   border: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -740,6 +759,12 @@ body .container {
 
 .modal.fade .modal-body {
   padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .modal.fade .modal-content {

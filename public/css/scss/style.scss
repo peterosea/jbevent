@@ -30,6 +30,8 @@ $breakpoints: (
   }
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;700&display=swap');
+
 // Common
 html, body {
     margin: 0;
@@ -64,6 +66,10 @@ input {
     }
 }
 
+body, div, a, li, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gothic A1', sans-serif !important;
+}
+
 // Page
 body .container {
     min-width: unset;
@@ -76,6 +82,7 @@ body .container {
     display: flex;
     margin:0 auto;
     position: relative;
+    max-width: 1920px;
     .content_inner {
         display: flex;
         flex-direction: column;
@@ -92,7 +99,7 @@ body .container {
         align-items: center;
         background-position: center top;
         background-size: auto;
-        background-repeat:repeat-x;
+        background-repeat:no-repeat;
         .inner {
             max-width: 960px;
             width: 100%;
@@ -279,6 +286,7 @@ body .container {
                         color: #000;
                         font-style: italic;
                         font-size: 28px;
+                        font-weight: bold;
                         border:none;
                         align-items: center;
                         display: flex;
@@ -321,6 +329,13 @@ body .container {
                     background-position: center center;
                     background-size: auto;
                     background-repeat: no-repeat;
+                    @include respond-to('mo') {
+                        width: 609px;
+                        height: 227px;
+                        background-image: url('#{$urlImg}/title_answer_mo.png');
+                        margin: 0 auto;
+                        margin-bottom: 70px;
+                    }
                 }
                 ul._content {
                     margin-top: 40px;
@@ -454,6 +469,7 @@ body .container {
                                     align-items: center;
                                     color: #ffa800;
                                     font-size: 16px;
+                                    text-align: left;
                                     @include respond-to('mo') {
                                         font-size: 28px;
                                     }
@@ -517,6 +533,7 @@ body .container {
                         color: #000;
                         font-style: italic;
                         font-size: 28px;
+                        font-weight: bold;
                         border:none;
                         align-items: center;
                         display: flex;
@@ -561,6 +578,8 @@ body .container {
     }
     .modal-body {
         padding:0;
+        justify-content: center;
+        display: flex;
     }
     .modal-content {
         border: none;
